@@ -21,6 +21,6 @@ const customFetch: Fetch = async (...args) => {
   return response;
 };
 
-export const honoClient = hc<RouteType>("/", {
+export const honoClient = hc<RouteType>("./", {
   fetch: customFetch,
 });

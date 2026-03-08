@@ -57,17 +57,15 @@ const buildWebSocketUrl = (
   sessionId: string | undefined,
   cwd: string | undefined,
 ) => {
-  const protocol = window.location.protocol === "https:" ? "wss" : "ws";
-  const host = window.location.host;
-  const searchParams = new URLSearchParams();
+  const baseUrl = new URL("./ws/terminal", window.location.href);
+  baseUrl.protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
   if (sessionId) {
-    searchParams.set("sessionId", sessionId);
+    baseUrl.searchParams.set("sessionId", sessionId);
   }
   if (cwd) {
-    searchParams.set("cwd", cwd);
+    baseUrl.searchParams.set("cwd", cwd);
   }
-  const query = searchParams.toString();
-  return `${protocol}://${host}/ws/terminal${query ? `?${query}` : ""}`;
+  return baseUrl.href;
 };
 
 type TerminalPanelProps = {

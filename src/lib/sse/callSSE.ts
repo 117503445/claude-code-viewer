@@ -4,7 +4,7 @@ export const callSSE = (options?: { onOpen?: (event: Event) => void }) => {
   const { onOpen } = options ?? {};
 
   const eventSource = new EventSource(
-    new URL("/api/sse", window.location.origin).href,
+    new URL("./api/sse", window.location.href).href,
   );
 
   const handleOnOpen = (event: Event) => {

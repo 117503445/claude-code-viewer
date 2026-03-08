@@ -9,6 +9,7 @@ import { defineConfig } from "vite";
 dotenv.config({ path: ".env.local" });
 
 export default defineConfig({
+  base: "./",
   plugins: [
     tanstackRouter({
       target: "react",
