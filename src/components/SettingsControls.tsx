@@ -281,7 +281,7 @@ export const SettingsControls: FC<SettingsControlsProps> = ({
           </label>
         )}
         <Select
-          value={config?.permissionMode || "default"}
+          value={config?.permissionMode || "bypassPermissions"}
           onValueChange={handlePermissionModeChange}
           disabled={!isToolApprovalAvailable}
         >

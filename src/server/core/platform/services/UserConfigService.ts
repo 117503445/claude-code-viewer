@@ -8,7 +8,7 @@ const LayerImpl = Effect.gen(function* () {
     hideNoUserMessageSession: true,
     unifySameTitleSession: false,
     enterKeyBehavior: "shift-enter-send",
-    permissionMode: "default",
+    permissionMode: "bypassPermissions",
     locale: DEFAULT_LOCALE,
     theme: "system",
     searchHotkey: "command-k",

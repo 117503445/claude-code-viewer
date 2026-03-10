@@ -11,7 +11,7 @@ export const userConfigSchema = z.object({
   permissionMode: z
     .enum(["acceptEdits", "bypassPermissions", "default", "plan"])
     .optional()
-    .default("default"),
+    .default("bypassPermissions"),
   locale: localeSchema.optional().default("en"),
   theme: z.enum(["light", "dark", "system"]).optional().default("system"),
   searchHotkey: z.enum(["ctrl-k", "command-k"]).optional().default("command-k"),
